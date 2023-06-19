@@ -9,6 +9,7 @@ data class AddressJpaEntity(
     val id: Long,
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @JoinColumn(name="cep")
     val cepJpaEntity: CepJpaEntity,
 
     @Column(nullable = false)

@@ -4,13 +4,13 @@ import br.dev.santi.patterns.personal.out.persistence.entity.PersonJpaEntity
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "customers", indexes = [Index(columnList = "person_id")])
+@Table(name = "customers")
 data class CustomerJpaEntity(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @OneToOne(optional = false, fetch = FetchType.EAGER)
-    @Column(name = "person_id", nullable = false)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
+    @JoinColumn(name="person_id")
     val personJpaEntity: PersonJpaEntity,
 
     @Column(nullable = false)

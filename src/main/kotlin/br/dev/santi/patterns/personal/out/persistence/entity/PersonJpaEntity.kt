@@ -22,5 +22,6 @@ data class PersonJpaEntity(
     val name: String,
 
     @ManyToOne
+    @JoinColumn(name = "address_id")
     val addressJpaEntity: AddressJpaEntity
 )

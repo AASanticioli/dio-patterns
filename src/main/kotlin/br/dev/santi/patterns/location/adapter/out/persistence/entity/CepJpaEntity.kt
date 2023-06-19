@@ -19,5 +19,6 @@ class CepJpaEntity(
     val neighborhood: String,
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @JoinColumn(name="city_id")
     val cityJpaEntity: CityJpaEntity
 )
