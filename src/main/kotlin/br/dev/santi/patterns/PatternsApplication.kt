@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class PatternsApplication
 
 fun main(args: Array<String>) {
-	runApplication<PatternsApplication>(*args)
+    runApplication<PatternsApplication>(*args)
 }
